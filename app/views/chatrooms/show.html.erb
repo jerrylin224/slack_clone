@@ -4,11 +4,13 @@
 </p>
 
 <div data-behavior="messages">
-  <% 1.upto(1000) do %>
-    <div><strong>excid3:</strong>Hello world!</div>
+  <% @messages.each do |message| %>
+    <div><strong><%= message.user.username %>:</strong><%= message.body %></div>
   <% end %>
 </div>
 
 <%= form_for [@chatroom, Message.new] do |f| %>
-  <%= f.text_area :body, rows: 1, class: "form_control", autofocus: true %>
+  <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
 <% end %>
+
+<%= console %>
