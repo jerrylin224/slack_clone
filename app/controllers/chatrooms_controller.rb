@@ -11,6 +11,7 @@ class ChatroomsController < ApplicationController
   # GET /chatrooms/1.json
   def show
     @messages = @chatroom.messages.order(created_at: :desc).limit(100).reverse
+    # 這段如果要丟去model要怎麼寫？
   end
 
   # GET /chatrooms/new
