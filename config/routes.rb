@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   resources :chatrooms do
     resource :chatroom_users
     resources :messages
