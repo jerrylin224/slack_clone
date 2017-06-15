@@ -18,7 +18,7 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
         App.last_read.update(data.chatroom_id)
 
       # Insert the message
-      active_chatroom.append("<div><strong>#{data.name}:</strong> #{data.body}</div>")
+      active_chatroom.append("<div><strong>#{data.name}:</strong> #{data.body} #{data.created_at}</div>")
 
     else
       $("[data-behavior='chatroom-link'][data-chatroom-id='#{data.chatroom_id}']").css("font-weight", "bold")

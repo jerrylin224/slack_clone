@@ -7,7 +7,7 @@ class ChatroomUsersController < ApplicationController
   end
 
   def destroy
-    @chatroom_user = @chatroom.chatroom_users.where(user_id: current_user.id).first_or_create
+    @chatroom_user = @chatroom.chatroom_users.where(user_id: current_user.id).destroy_all
     redirect_to chatrooms_path
   end
 

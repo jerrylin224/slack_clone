@@ -1,1 +1,1 @@
-<div><strong><%= image_tag(current_user.image, id: 'user_image') %><%= message.user.name %>:</strong><%= message.body %></div>
+<div><strong><%= image_tag(current_user.image, id: 'user_image') %><%= message.user.name %>:</strong><%= message.body %>  <%= message.created_at.strftime("%I:%M%p") %></div>
